@@ -1,0 +1,12 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/api/hello.js"
+        },
+        {
+            "src": "/hello",
+            "dest": "/api/hello.js"
+        }
+    ]
+}

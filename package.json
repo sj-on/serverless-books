@@ -1,0 +1,15 @@
+{
+  "name": "serverless-fn-trial",
+  "version": "1.0.0",
+  "description": "let's go 'serverless'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sj",
+  "license": "ISC",
+  "web": "http://serverless-fn-trial-sj-on.vercel.app/",
+  "dependencies": {
+    "diskdb": "^0.1.17"
+  }
+}
