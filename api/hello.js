@@ -1,6 +1,3 @@
-const db = require("diskdb");
-db.connect("database", ["books"]);
-
 module.exports = (request, response) => {
 	if (request.method === "GET") {
 		response

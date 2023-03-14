@@ -5,8 +5,8 @@
             "dest": "/api/hello.js"
         },
         {
-            "src": "/hello",
-            "dest": "/api/hello.js"
+            "src": "/books",
+            "dest": "/api/books.js"
         }
     ]
 }
