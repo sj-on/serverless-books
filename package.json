@@ -4,12 +4,16 @@
   "description": "let's go 'serverless'",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "vercel --prod",
+    "devDeploy": "vercel deploy"
   },
   "author": "sj",
   "license": "ISC",
   "web": "http://serverless-fn-trial-sj-on.vercel.app/",
   "dependencies": {
-    "diskdb": "^0.1.17"
+    "mongoose": "^7.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0"
   }
 }
