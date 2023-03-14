@@ -9,7 +9,7 @@
   },
   "author": "sj",
   "license": "ISC",
-  "web": "http://serverless-fn-trial-sj-on.vercel.app/",
+  "web": "http://serverless-books.vercel.app",
   "dependencies": {
     "mongoose": "^7.0.1"
   },

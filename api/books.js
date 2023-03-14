@@ -16,18 +16,7 @@ mongoose
 		console.log("error connecting to MongoDB:", error.message);
 	});
 
-const booksSchema = new mongoose.Schema({
-	title: {
-		type: String,
-		required: true,
-	},
-	blurb: {
-		type: String,
-		required: true,
-	},
-});
-
-const Books = mongoose.model("Books", booksSchema);
+const Books = require("../models/books");
 
 module.exports = (request, response) => {
 	if (request.method === "GET") {
@@ -49,3 +38,9 @@ module.exports = (request, response) => {
 			.catch((error) => response.status(500).json(error.message));
 	}
 };
+
+// to do:
+// factorise the code into seperate modules <- probably won't do. if it ain't broke, don't fix it. <- if i won't try, i won't know it.
+// return only one book at a time via get. prefer db related function over math.random <- i'll instead cache the results on the frontend, because otherwise it will be too many db reads.
+
+// todo: authenticated post route.
