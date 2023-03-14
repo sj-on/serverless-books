@@ -8,5 +8,6 @@
             "src": "/books",
             "dest": "/api/books.js"
         }
-    ]
+    ],
+    "installCommand": "npm install"
 }
