@@ -9,16 +9,5 @@
             "dest": "/api/books.js"
         }
     ],
-    "installCommand": "npm install",
-    "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "access-control-allow-origin",
-          "value": "*"
-        }
-      ]
-    }
-  ]
+    "installCommand": "npm install"
 }
