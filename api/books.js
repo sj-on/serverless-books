@@ -18,7 +18,25 @@ mongoose
 
 const Books = require("../models/books");
 
-module.exports = (request, response) => {
+const allowCors = fn => async (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  // another common pattern
+  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
+  if (req.method === 'OPTIONS') {
+    res.status(200).end()
+    return
+  }
+  return await fn(req, res)
+}
+
+
+const handler = (request, response) => {
 	if (request.method === "GET") {
 		Books.find()
 			.then((books) => {
@@ -38,6 +56,8 @@ module.exports = (request, response) => {
 			.catch((error) => response.status(500).json(error.message));
 	}
 };
+
+module.exports = allowCors(handler);
 
 // to do:
 // factorise the code into seperate modules <- probably won't do. if it ain't broke, don't fix it. <- if i won't try, i won't know it.
